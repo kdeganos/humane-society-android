@@ -47,12 +47,12 @@ public class AdoptActivity extends AppCompatActivity {
                                     int position, long id) {
                 Intent intent = new Intent(AdoptActivity.this, ProfileActivity.class);
                 intent.putExtra("petName", pets[position]);
-                intent.putExtra("ages", ages[position]);
+                intent.putExtra("age", ages[position]);
                 intent.putExtra("sex", sex[position]);
                 intent.putExtra("color", color[position]);
                 intent.putExtra("weight", weight[position]);
                 intent.putExtra("imageId", imageId[position].toString());
-                Log.d(TAG, imageId[position].toString());
+//                Log.d(TAG, imageId[position].toString());
                 startActivity(intent);
 //                Toast.makeText(MainActivity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
 

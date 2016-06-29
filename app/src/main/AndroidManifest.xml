@@ -22,7 +22,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.epicodus.humanesociety.MainActivity" />
         </activity>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".ProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.epicodus.humanesociety.AdoptActivity" />
+        </activity>
     </application>
 
 </manifest>

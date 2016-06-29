@@ -14,6 +14,11 @@ import static java.lang.Integer.parseInt;
 public class ProfileActivity extends AppCompatActivity {
     @Bind(R.id.petNameView) TextView mPetNameView;
     @Bind(R.id.petImageView) ImageView mPetImageView;
+    @Bind(R.id.petAgeView) TextView mPetAgeView;
+    @Bind(R.id.petSexView) TextView mPetSexView;
+    @Bind(R.id.petColorView) TextView mPetColorView;
+    @Bind(R.id.petWeightView) TextView mPetWeightView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,14 +27,19 @@ public class ProfileActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String petName = intent.getStringExtra("petName");
-        String ages = intent.getStringExtra("ages");
+        String age = intent.getStringExtra("age");
         String sex = intent.getStringExtra("sex");
         String color = intent.getStringExtra("color");
         String weight = intent.getStringExtra("weight");
         String imageId = intent.getStringExtra("imageId");
 
-        mPetImageView.setImageResource(parseInt(imageId));
         mPetNameView.setText(petName);
+        mPetImageView.setImageResource(parseInt(imageId));
+        mPetAgeView.setText("Age: " + age + " old");
+        mPetSexView.setText("Sex: " + sex);
+        mPetColorView.setText("Color: " + color);
+        mPetWeightView.setText("Weight: " + weight);
+
 
     }
 }
