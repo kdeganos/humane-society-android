@@ -9,7 +9,6 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static java.lang.Integer.parseInt;
 
 public class ProfileActivity extends AppCompatActivity {
     @Bind(R.id.petNameView) TextView mPetNameView;
@@ -25,21 +24,14 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        String petName = intent.getStringExtra("petName");
-        String age = intent.getStringExtra("age");
-        String sex = intent.getStringExtra("sex");
-        String color = intent.getStringExtra("color");
-        String weight = intent.getStringExtra("weight");
-        String imageId = intent.getStringExtra("imageId");
+        Pet pet = getIntent().getParcelableExtra("petObject");
 
-        mPetNameView.setText(petName);
-        mPetImageView.setImageResource(parseInt(imageId));
-        mPetAgeView.setText("Age: " + age + " old");
-        mPetSexView.setText("Sex: " + sex);
-        mPetColorView.setText("Color: " + color);
-        mPetWeightView.setText("Weight: " + weight);
-
+        mPetNameView.setText(pet.mName);
+        mPetImageView.setImageResource(pet.mImageId);
+        mPetAgeView.setText("Age: " + pet.mAge + " old");
+        mPetSexView.setText("Sex: " + pet.mSex);
+        mPetColorView.setText("Color: " + pet.mColor);
+        mPetWeightView.setText("Weight: " + pet.mWeight);
 
     }
 }
