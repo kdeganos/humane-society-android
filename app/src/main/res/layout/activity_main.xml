@@ -59,5 +59,12 @@
         android:shadowDy="5"
         android:shadowRadius="5"/>
 
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/testImageView"
+        android:layout_above="@+id/imageView"
+        android:layout_centerHorizontal="true" />
+
 
 </RelativeLayout>
